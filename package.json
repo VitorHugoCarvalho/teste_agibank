@@ -1,0 +1,20 @@
+{
+  "name": "teste_agibank",
+  "version": "1.0.0",
+  "description": "Teste destinado ao Agibank",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitorHugoCarvalho/teste_agibank.git"
+  },
+  "author": "Vitor Hugo Carvalho de Sá",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitorHugoCarvalho/teste_agibank/issues"
+  },
+  "homepage": "https://github.com/VitorHugoCarvalho/teste_agibank#readme"
+}
