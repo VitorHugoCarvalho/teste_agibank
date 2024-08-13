@@ -1,0 +1,50 @@
+name: Cypress Tests
+
+# Define em quais eventos o workflow será acionado
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    # Define o sistema operacional
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      # Faz o checkout do código do repositório
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      # Configura a versão do Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      # Instala as dependências do projeto
+      run: npm install
+
+    - name: Run Cypress tests
+      # Executa os testes Cypress
+      run: npm run cy:run
+
+    - name: Upload Cypress screenshots
+      # Faz upload das capturas de tela geradas pelo Cypress
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: cypress-screenshots
+        path: cypress/screenshots
+
+    - name: Upload Cypress videos
+      # Faz upload dos vídeos gerados pelo Cypress
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: cypress-videos
+        path: cypress/videos
