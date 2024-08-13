@@ -31,7 +31,7 @@ jobs:
 
     - name: Run Cypress tests
       # Executa os testes Cypress
-      run: npm run cy:run
+      run: npm run cypress:run
 
     - name: Upload Cypress screenshots
       # Faz upload das capturas de tela geradas pelo Cypress
