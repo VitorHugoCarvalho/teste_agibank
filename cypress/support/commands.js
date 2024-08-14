@@ -23,11 +23,3 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-Cypress.Commands.add('searchFirstCard', (text) => { 
-    cy.get('a[aria-label="Link do ícone de pesquisa"]').should('be.visible').click({force: true})
-    cy.get('#search-field').should('be.visible').type(`${text}{enter}`,{force: true})
-    cy.get('main>div>article div.post-thumb-img-content').should('be.visible')
-    cy.get('main>div>article div.post-thumb-img-content').first().click()
-    cy.contains(`${text}`).should("be.visible")
- })
