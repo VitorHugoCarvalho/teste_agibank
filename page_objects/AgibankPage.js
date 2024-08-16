@@ -33,7 +33,7 @@ class AgibankPage {
     }
 
     getContentResultAtPosition(position){
-        this.getArcticle().eq(position+1).click();
+        this.getArcticle().eq(position-1).click();
     }
 
     searchFirstContent(content){
